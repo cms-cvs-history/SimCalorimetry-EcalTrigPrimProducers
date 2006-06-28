@@ -9,4 +9,11 @@
     <logical/>
   </File>
 
+  <File ID="E6B283B7-E905-DB11-9C33-000E0C4DE650">
+    <physical>
+      <pfn filetype="ROOT_All" name="file:electrongun100GeV_detsim_ecalRecHits.root"/>
+    </physical>
+    <logical/>
+  </File>
+
 </POOLFILECATALOG>
