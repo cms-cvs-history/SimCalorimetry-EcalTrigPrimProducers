@@ -1,5 +1,5 @@
-	module tp = EcalTrigPrimProducer {
+	module ecaltp = EcalTrigPrimProducer {
                   untracked bool Validation=false 
                   string Label = "ecaldigi"
-	              int32 FgvbMinEnergy = 50
-                }       
+	          int32 FgvbMinEnergy = 50
+        }       
