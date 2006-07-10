@@ -2,4 +2,6 @@
                   untracked bool Validation=false 
                   string Label = "ecaldigi"
 	          int32 FgvbMinEnergy = 50
+	          double TTFLowEnergy =2.5   #GeV
+	          double TTFHighEnergy=5.
         }       
