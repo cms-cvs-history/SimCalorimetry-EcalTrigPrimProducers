@@ -9,7 +9,7 @@
    include "Geometry/CaloEventSetup/data/EcalTrigTowerConstituents.cfi"
 
 # IdealGeometryRecord
-   include "Geometry/CaloEventSetup/test/data/testCaloConfiguration.cfi"
+   include "Geometry/CMSCommonData/data/cmsIdealGeometryXML.cfi"
 
 # Ecal conditions, not yet used
    include "CalibCalorimetry/EcalTrivialCondModules/data/EcalTrivialCondRetriever.cfi"
