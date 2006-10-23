@@ -1,6 +1,7 @@
 	module ecalTriggerPrimitiveDigis = EcalTrigPrimProducer {
                   untracked bool Validation=false 
-                  string Label = "ecalUnsuppressedDigis"
+#                  string Label = "ecalUnsuppressedDigis"
+                  string Label = "ecalDigis"
                   string InstanceEB = ""
                   string InstanceEE = ""
 	          int32 FgvbMinEnergy = 50   #temporary adc-value for Endcap
