@@ -1,6 +1,9 @@
 	module ecalTriggerPrimitiveDigis = EcalTrigPrimProducer {
                   untracked bool Validation=false 
+# if you want to use unsuppressed digis:
 #                  string Label = "ecalUnsuppressedDigis"
+#                  string InstanceEB = ""
+#                  string InstanceEE = ""
                   string Label = "ecalDigis"
                   string InstanceEB = "ebDigis"
                   string InstanceEE = "eeDigis"
