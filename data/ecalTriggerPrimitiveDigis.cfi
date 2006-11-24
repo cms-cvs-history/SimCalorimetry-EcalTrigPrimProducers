@@ -7,7 +7,9 @@
                   string Label = "ecalDigis"
                   string InstanceEB = "ebDigis"
                   string InstanceEE = "eeDigis"
-	          int32 FgvbMinEnergy = 50   #temporary adc-value for Endcap
-	          double TTFLowEnergy =2.5   #GeV
-	          double TTFHighEnergy=5.
+                  string DatabaseFileEB = "TPG.txt"
+                  string DatabaseFileEE = ""
+#	          int32 FgvbMinEnergy = 50   #temporary adc-value for Endcap
+#	          double TTFLowEnergy =2.5   #GeV
+#	          double TTFHighEnergy=5.
         }       
