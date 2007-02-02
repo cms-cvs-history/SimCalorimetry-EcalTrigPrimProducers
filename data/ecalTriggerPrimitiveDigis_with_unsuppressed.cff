@@ -10,11 +10,6 @@
 
 # IdealGeometryRecord
    include "Geometry/CMSCommonData/data/cmsIdealGeometryXML.cfi"
-#
-# removed by tommaso
-#
-# Ecal conditions, not yet used
-#   include "CalibCalorimetry/EcalTrivialCondModules/data/EcalTrivialCondRetriever.cfi"
 
 # Trigger Primitive Producer
    include "SimCalorimetry/EcalTrigPrimProducers/data/ecalTriggerPrimitiveDigis_with_unsuppressed.cfi"
