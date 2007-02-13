@@ -1,11 +1,10 @@
 	module ecalTriggerPrimitiveDigis = EcalTrigPrimProducer {
                   untracked bool Validation=false 
+                  bool BarrelOnly=false
+                  bool TcpOutput = false
                   string Label = "ecalUnsuppressedDigis"
                   string InstanceEB = ""
                   string InstanceEE = ""
                   string DatabaseFileEB = "TPG.txt"
                   string DatabaseFileEE = ""
-#	          int32 FgvbMinEnergy = 50   #temporary adc-value for Endcap
-#	          double TTFLowEnergy =2.5   #GeV
-#	          double TTFHighEnergy=5.
         }       
