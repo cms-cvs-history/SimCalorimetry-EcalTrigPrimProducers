@@ -1,0 +1,3 @@
+# Trigger Primitive Producer
+   include "SimCalorimetry/EcalTrigPrimProducers/data/ecalTriggerPrimitiveDigis_with_unsuppressed.cfi"
+   replace ecalTriggerPrimitiveDigis.BarrelOnly = true
