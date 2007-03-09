@@ -1,8 +1,9 @@
 	module ecalTriggerPrimitiveDigis = EcalTrigPrimProducer {
                   untracked bool Validation=false 
-                  bool BarrelOnly=false 
+                  bool BarrelOnly= false 
                   bool TcpOutput = false
-                  string Label = "ecalDigis"
+	          bool Debug     = false
+                  string Label      = "ecalDigis"
                   string InstanceEB = "ebDigis"
                   string InstanceEE = "eeDigis"
                   string DatabaseFileEB = "TPG.txt"
