@@ -1,6 +1,12 @@
 COMMENT put your comments here
 COMMENT do not remove xtal, strip and tower coordinates with -1 (used as default)
-COMMENT do not insert comments within xtal, strip or tower structure (data block length fixed)
+COMMENT do not insert comments within physics, xtal, strip or tower structure (data block length fixed)
+COMMENT =================================
+COMMENT           physics structure
+COMMENT
+COMMENT  xtalLSB (GeV), EtSaturation (GeV), ttf_threshold_Low (GeV), ttf_threshold_High (GeV)
+COMMENT =================================
+COMMENT
 COMMENT =================================
 COMMENT           crystal structure
 COMMENT
@@ -23,6 +29,9 @@ COMMENT  LUT[1-1024]
 COMMENT  el, eh, tl, th, lut_fg
 COMMENT =================================
 
+
+PHYSICS 
+0.035 120. 2.5 5.
 
 CRYSTAL -1 1 1 -1
 0x96 0x99 0x3
@@ -792,7 +801,6 @@ CRYSTAL -1 40 3 -1
 0x96 0xdf 0x4
 0x96 0xdf 0x3
 0x96 0xa7 0x0
-
 CRYSTAL -1 37 4 -1
 0x96 0xdc 0x4
 0x96 0xdc 0x3
@@ -1389,7 +1397,7 @@ CRYSTAL -1 68 5 -1
 COMMENT default parameters for strips
 STRIP -1 -1 -1
 0x2
-0xffffffdc 0xffffffdd 0x10 0x1f 0x17
+0xffffffdc 0xffffffdd 0x10 0x1f 0x18
 
 COMMENT default parameters for towers
 TOWER -1 -1
