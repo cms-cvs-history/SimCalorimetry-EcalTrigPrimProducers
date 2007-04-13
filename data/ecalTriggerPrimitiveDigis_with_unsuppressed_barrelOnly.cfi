@@ -1,6 +1,6 @@
 	module ecalTriggerPrimitiveDigis = EcalTrigPrimProducer {
                   untracked bool Validation=false 
-                  bool BarrelOnly=false
+                  bool BarrelOnly=true
                   bool TcpOutput = false
                   bool Debug     = false
                   string Label = "ecalUnsuppressedDigis"
