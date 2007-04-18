@@ -1,27 +1,3 @@
-
-# Magnetic field full setup
-   include "MagneticField/Engine/data/volumeBasedMagneticField.cfi"
-
-# Calo geometry service model
-   include "Geometry/CaloEventSetup/data/CaloGeometry.cfi"
-
-# Calo geometry service model
-   include "Geometry/CaloEventSetup/data/EcalTrigTowerConstituents.cfi"
-
-# IdealGeometryRecord
-   include "Geometry/CMSCommonData/data/cmsIdealGeometryXML.cfi"
-
 # Trigger Primitive Producer
-   include "SimCalorimetry/EcalTrigPrimProducers/data/ecalTriggerPrimitiveDigis_with_unsuppressed_barrelOnly.cfi"
-
-# esmodule creating  EcalTPParametersRcd + corresponding empty essource
-        es_module = EcalTrigPrimESProducer {
-                  untracked string DatabaseFileEB = "TPG.txt"
-                  untracked string DatabaseFileEE = ""
-        }
-
-        es_source tpparams = EmptyESSource {
-          string recordName = "EcalTPParametersRcd"
-          vuint32 firstValid = { 1 }
-          bool iovIsRunNotTime = false
-        }
+   include "SimCalorimetry/EcalTrigPrimProducers/data/ecalTriggerPrimitiveDigis_with_unsuppressed.cfi"
+   replace ecalTriggerPrimitiveDigis.BarrelOnly = true
