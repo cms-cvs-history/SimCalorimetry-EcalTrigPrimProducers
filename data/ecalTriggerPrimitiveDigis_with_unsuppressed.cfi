@@ -2,9 +2,15 @@
                   untracked bool Validation=false 
                   bool BarrelOnly=false
                   bool TcpOutput = false
+                  bool Debug     = false
                   string Label = "ecalUnsuppressedDigis"
                   string InstanceEB = ""
                   string InstanceEE = ""
-                  string DatabaseFileEB = "TPG.txt"
-                  string DatabaseFileEE = ""
+#                  string DatabaseFileEB = "TPG.txt"  // suppressed from 140_pre4 on
+#                  string DatabaseFileEE = ""         // suppressed from 140_pre4 on
+	          double TTFLowEnergyEB =2.           // the following is added from 140_pre4 on
+	          double TTFHighEnergyEB =5.
+	          double TTFLowEnergyEE =2.
+	          double TTFHighEnergyEE =5.
+ 
         }       
