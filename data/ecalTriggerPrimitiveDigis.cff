@@ -17,11 +17,19 @@
 # esmodule creating  EcalTPParametersRcd + corresponding empty essource
         es_module = EcalTrigPrimESProducer {
                   untracked string DatabaseFileEB = "TPG.txt"
-                  untracked string DatabaseFileEE = ""
+                  untracked string DatabaseFileEE = "TPG_EE.txt"
         }
 
         es_source tpparams = EmptyESSource {
           string recordName = "EcalTPParametersRcd"
           vuint32 firstValid = { 1 }
           bool iovIsRunNotTime = false
+        }
+
+# ecal mapping
+  include "Geometry/EcalMapping/data/EcalMapping.cfi"
+         es_source eegeom = EmptyESSource {
+              string recordName = "EcalMappingRcd"
+              vuint32 firstValid = { 1 }
+              bool iovIsRunNotTime = false
         }

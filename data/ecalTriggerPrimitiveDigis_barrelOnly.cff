@@ -25,3 +25,12 @@
           vuint32 firstValid = { 1 }
           bool iovIsRunNotTime = false
         }
+
+# ecal mapping
+  include "Geometry/EcalMapping/data/EcalMapping.cfi"
+         es_source eegeom = EmptyESSource {
+              string recordName = "EcalMappingRcd"
+              vuint32 firstValid = { 1 }
+              bool iovIsRunNotTime = false
+        }
+
