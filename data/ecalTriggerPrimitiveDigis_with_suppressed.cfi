@@ -1,0 +1,20 @@
+#######################################################################################
+########## attention: default is changed to work on unsuppressed digis!! ##############
+#######################################################################################
+
+	module ecalTriggerPrimitiveDigis = EcalTrigPrimProducer {
+                  untracked bool Validation=false 
+                  bool BarrelOnly= false 
+                  bool TcpOutput = false
+	          bool Debug     = false
+                  string Label      = "ecalDigis"
+                  string InstanceEB = "ebDigis"
+                  string InstanceEE = "eeDigis"
+#                  string DatabaseFileEB = "TPG.txt"  // suppressed from 140_pre4 on
+#                  string DatabaseFileEE = ""         // suppressed from 140_pre4 on
+	          double TTFLowEnergyEB =2.5           // this + the following is added from 140_pre4 on
+	          double TTFHighEnergyEB =5.
+	          double TTFLowEnergyEE =2.5
+	          double TTFHighEnergyEE =5.
+
+        }       
