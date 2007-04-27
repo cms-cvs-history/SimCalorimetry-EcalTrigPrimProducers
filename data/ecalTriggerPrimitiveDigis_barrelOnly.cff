@@ -3,21 +3,22 @@
    include "MagneticField/Engine/data/volumeBasedMagneticField.cfi"
 
 # Calo geometry service model
-   include "Geometry/CaloEventSetup/data/CaloGeometry.cfi"
+#   include "Geometry/CaloEventSetup/data/CaloGeometry.cfi"
 
 # Calo geometry service model
    include "Geometry/CaloEventSetup/data/EcalTrigTowerConstituents.cfi"
 
 # IdealGeometryRecord
-   include "Geometry/CMSCommonData/data/cmsIdealGeometryXML.cfi"
+#   include "Geometry/CMSCommonData/data/cmsIdealGeometryXML.cfi"
 
 # Trigger Primitive Producer
-   include "SimCalorimetry/EcalTrigPrimProducers/data/ecalTriggerPrimitiveDigis_barrelOnly.cfi"
+   include "SimCalorimetry/EcalTrigPrimProducers/data/ecalTriggerPrimitiveDigis.cfi"
+   replace ecalTriggerPrimitiveDigis.BarrelOnly=true
 
 # esmodule creating  EcalTPParametersRcd + corresponding empty essource
         es_module = EcalTrigPrimESProducer {
                   untracked string DatabaseFileEB = "TPG.txt"
-                  untracked string DatabaseFileEE = ""
+                  untracked string DatabaseFileEE = "TPG_EE.txt"
         }
 
         es_source tpparams = EmptyESSource {
