@@ -12,9 +12,9 @@
                   string InstanceEE = ""
 #                  string DatabaseFileEB = "TPG.txt"  // suppressed from 140_pre4 on
 #                  string DatabaseFileEE = ""         // suppressed from 140_pre4 on
-	          double TTFLowEnergyEB =2.5           // this + the following is added from 140_pre4 on
-	          double TTFHighEnergyEB =5.
-	          double TTFLowEnergyEE =2.5
-	          double TTFHighEnergyEE =5.
+	          double TTFLowEnergyEB = 1.           // this + the following is added from 140_pre4 on
+	          double TTFHighEnergyEB = 1.
+	          double TTFLowEnergyEE = 1.
+	          double TTFHighEnergyEE = 1.
 
         }       
