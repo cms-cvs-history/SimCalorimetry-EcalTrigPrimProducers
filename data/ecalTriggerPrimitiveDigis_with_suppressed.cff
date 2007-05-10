@@ -1,16 +1,3 @@
-
-# Magnetic field full setup
-   include "MagneticField/Engine/data/volumeBasedMagneticField.cfi"
-
-# Calo geometry service model
-   include "Geometry/CaloEventSetup/data/CaloGeometry.cff"
-
-# Calo geometry service model
-   include "Geometry/CaloEventSetup/data/EcalTrigTowerConstituents.cfi"
-
-# IdealGeometryRecord
-   include "Geometry/CMSCommonData/data/cmsIdealGeometryXML.cfi"
-
 # Trigger Primitive Producer
    include "SimCalorimetry/EcalTrigPrimProducers/data/ecalTriggerPrimitiveDigis_with_suppressed.cfi"
 
@@ -27,7 +14,6 @@
         }
 
 # ecal mapping
-  include "Geometry/EcalMapping/data/EcalMapping.cfi"
          es_source eegeom = EmptyESSource {
               string recordName = "EcalMappingRcd"
               vuint32 firstValid = { 1 }
