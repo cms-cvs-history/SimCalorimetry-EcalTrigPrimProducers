@@ -3,10 +3,10 @@
 #######################################################################################
 
 	module ecalTriggerPrimitiveDigis = EcalTrigPrimProducer {
-                  untracked bool Validation=false 
                   bool BarrelOnly= false 
                   bool TcpOutput = false
 	          bool Debug     = false
+	          bool Famos     = false
                   string Label      = "ecalDigis"
                   string InstanceEB = "ebDigis"
                   string InstanceEE = "eeDigis"
