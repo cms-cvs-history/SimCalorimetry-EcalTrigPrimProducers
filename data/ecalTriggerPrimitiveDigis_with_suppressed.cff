@@ -10,12 +10,12 @@
         es_source tpparams = EmptyESSource {
           string recordName = "EcalTPParametersRcd"
           vuint32 firstValid = { 1 }
-          bool iovIsRunNotTime = false
+          bool iovIsRunNotTime = true
         }
 
 # ecal mapping
          es_source eegeom = EmptyESSource {
               string recordName = "EcalMappingRcd"
               vuint32 firstValid = { 1 }
-              bool iovIsRunNotTime = false
+              bool iovIsRunNotTime = true
         }
