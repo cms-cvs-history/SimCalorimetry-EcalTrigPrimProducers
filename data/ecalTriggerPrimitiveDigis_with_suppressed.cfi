@@ -10,11 +10,6 @@
                   string Label      = "ecalDigis"
                   string InstanceEB = "ebDigis"
                   string InstanceEE = "eeDigis"
-#                  string DatabaseFileEB = "TPG.txt"  // suppressed from 140_pre4 on
-#                  string DatabaseFileEE = ""         // suppressed from 140_pre4 on
-	          double TTFLowEnergyEB =2.5           // this + the following is added from 140_pre4 on
-	          double TTFHighEnergyEB =5.
-	          double TTFLowEnergyEE =2.5
-	          double TTFHighEnergyEE =5.
+#                  int32 binOfMaximum = 3              // optional from release 200 on, from 1-10
 
         }       
