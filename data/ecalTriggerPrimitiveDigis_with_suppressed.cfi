@@ -10,6 +10,6 @@
                   string Label      = "ecalDigis"
                   string InstanceEB = "ebDigis"
                   string InstanceEE = "eeDigis"
-                  int32 binOfMaximum = 4              // optional from release 200 on, from 1-10
+#                  int32 binOfMaximum = 6              // optional from release 200 on, from 1-10
 
         }       
