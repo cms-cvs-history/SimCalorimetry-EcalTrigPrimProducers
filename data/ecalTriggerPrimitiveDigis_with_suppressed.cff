@@ -3,7 +3,8 @@
 
 # esmodule creating  EcalTPParametersRcd + corresponding empty essource
         es_module = EcalTrigPrimESProducer {
-                  untracked string DatabaseFile = "TPG.txt"
+                  untracked string DatabaseFileEB = "TPG_EB.txt"
+                  untracked string DatabaseFileEE = "TPG_EE.txt"
         }
 
         es_source tpparams = EmptyESSource {
