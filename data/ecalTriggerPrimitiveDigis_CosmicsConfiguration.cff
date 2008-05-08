@@ -68,7 +68,7 @@ es_module = EcalTrigPrimESProducer {
 }
 
 # Ecal Trig Prim module
-module ecalTriggerPrimitiveDigis = EcalTrigPrimProducer {
+module simEcalTriggerPrimitiveDigis = EcalTrigPrimProducer {
    bool BarrelOnly= true 
    bool TcpOutput = false
    bool Debug     = false
