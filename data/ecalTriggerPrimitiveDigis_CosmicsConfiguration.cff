@@ -2,6 +2,7 @@
 include "Geometry/EcalMapping/data/EcalMapping.cfi"
 include "Geometry/EcalMapping/data/EcalMappingRecord.cfi"
 include "MagneticField/Engine/data/volumeBasedMagneticField.cfi"
+include "CalibCalorimetry/EcalTPGTools/data/ecalTPGScale.cff"
 include "CalibCalorimetry/Configuration/data/Ecal_FakeConditions.cff"
 
 # Sources of record
@@ -60,11 +61,6 @@ es_source tpparams11 = EmptyESSource {
    vuint32 firstValid = { 1 }
    bool iovIsRunNotTime = true
 }
-es_source tpparams12 = EmptyESSource {
-   string recordName = "EcalTPGPhysicsConstRcd"
-   vuint32 firstValid = { 1 }
-   bool iovIsRunNotTime = true
-}
 
 # Event Setup module
 es_module = EcalTrigPrimESProducer {
@@ -72,7 +68,7 @@ es_module = EcalTrigPrimESProducer {
 }
 
 # Ecal Trig Prim module
-module ecalTriggerPrimitiveDigis = EcalTrigPrimProducer {
+module simEcalTriggerPrimitiveDigis = EcalTrigPrimProducer {
    bool BarrelOnly= true 
    bool TcpOutput = false
    bool Debug     = false
