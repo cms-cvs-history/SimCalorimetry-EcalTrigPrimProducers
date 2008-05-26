@@ -66,6 +66,4 @@
         }
 
 
-# ecal mapping
-	include "Geometry/EcalMapping/data/EcalMappingRecord.cfi" 
 

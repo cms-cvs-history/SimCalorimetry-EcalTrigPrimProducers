@@ -61,4 +61,3 @@
           vuint32 firstValid = { 1 }
           bool iovIsRunNotTime = true
         }
-        include "Geometry/EcalMapping/data/EcalMappingRecord.cfi" 
