@@ -61,7 +61,7 @@ es_source tpparams11 = EmptyESSource {
 
 # Event Setup module
 es_module = EcalTrigPrimESProducer {
-   untracked string DatabaseFile = "TPG_MIPs.txt"
+   untracked string DatabaseFile = "TPG_MIPs.txt.gz"
 }
 
 # Ecal Trig Prim module

@@ -5,7 +5,7 @@
 
 # esmodule creating  all the records
         es_module = EcalTrigPrimESProducer {
-                  untracked string DatabaseFile = "TPG.txt"
+                  untracked string DatabaseFile = "TPG.txt.gz"
         }
 
 # corresponding es_sources
