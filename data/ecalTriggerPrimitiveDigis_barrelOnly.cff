@@ -1,12 +1,11 @@
 
 # Trigger Primitive Producer
    include "SimCalorimetry/EcalTrigPrimProducers/data/ecalTriggerPrimitiveDigis.cfi"
-   replace ecalTriggerPrimitiveDigis.BarrelOnly=true
+   replace simEcalTriggerPrimitiveDigis.BarrelOnly=true
 
 # esmodule creating  all the records
         es_module = EcalTrigPrimESProducer {
-                  untracked string DatabaseFileEB = "TPG_EB.txt"
-                  untracked string DatabaseFileEE = "TPG_EE.txt"
+                  untracked string DatabaseFile = "TPG.txt"
         }
 
 # corresponding es_sources
@@ -67,6 +66,4 @@
         }
 
 
-# ecal mapping
-	include "Geometry/EcalMapping/data/EcalMappingRecord.cfi" 
 

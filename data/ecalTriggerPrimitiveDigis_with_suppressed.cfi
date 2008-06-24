@@ -2,14 +2,14 @@
 ########## attention: default is changed to work on unsuppressed digis!! ##############
 #######################################################################################
 
-	module ecalTriggerPrimitiveDigis = EcalTrigPrimProducer {
+	module simEcalTriggerPrimitiveDigis = EcalTrigPrimProducer {
                   bool BarrelOnly= false 
                   bool TcpOutput = false
 	          bool Debug     = false
 	          bool Famos     = false
-                  string Label      = "ecalDigis"
+                  string Label      = "simEcalDigis"
                   string InstanceEB = "ebDigis"
                   string InstanceEE = "eeDigis"
-#                  int32 binOfMaximum = 3              // optional from release 200 on, from 1-10
+                  int32 binOfMaximum = 6              // optional from release 200 on, from 1-10
 
         }       
