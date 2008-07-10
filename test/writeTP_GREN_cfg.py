@@ -46,6 +46,6 @@ process.MessageLogger = cms.Service("MessageLogger")
 
 process.p = cms.Path(process.simEcalTriggerPrimitiveDigis)
 process.outpath = cms.EndPath(process.out)
-process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_MIPs.txt'
+process.EcalTrigPrimESProducer.DatabaseFile = 'TPG_cosmics.txt'
 
 
