@@ -1,7 +1,7 @@
 # Trigger Primitive Producer
    include "SimCalorimetry/EcalTrigPrimProducers/data/ecalTriggerPrimitiveDigis_with_suppressed.cfi"
 
-# esmodule creating  EcalTPParametersRcd + corresponding empty essource
+# esmodule creating  conditions + corresponding empty essource
         es_module = EcalTrigPrimESProducer {
                   untracked string DatabaseFile = "TPG.txt.gz"
         }
