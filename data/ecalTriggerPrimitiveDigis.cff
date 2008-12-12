@@ -1,3 +1,0 @@
-# Trigger Primitive Producer
-   include "SimCalorimetry/EcalTrigPrimProducers/data/ecalTriggerPrimitiveDigis.cfi"
-   include "SimCalorimetry/EcalTrigPrimProducers/data/ecalTrigPrimESProducer.cff"
