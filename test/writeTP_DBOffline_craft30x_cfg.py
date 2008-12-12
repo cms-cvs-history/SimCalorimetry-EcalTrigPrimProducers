@@ -1,19 +1,41 @@
 import FWCore.ParameterSet.Config as cms
 
-process = cms.Process("TPDBAn")
+process = cms.Process("PROTPGD")
+
 process.load("CondCore.DBCommon.CondDBSetup_cfi")
 
+# ecal mapping
+process.load("Geometry.EcalMapping.EcalMapping_cfi")
+
+process.load("Geometry.EcalMapping.EcalMappingRecord_cfi")
+
+# magnetic field
+process.load("Configuration.StandardSequences.MagneticField_cff")
+
+# Calo geometry service model
 process.load("Geometry.CaloEventSetup.CaloGeometry_cfi")
 
+# Calo geometry service model
+process.load("Geometry.CaloEventSetup.EcalTrigTowerConstituents_cfi")
+
+# IdealGeometryRecord
 process.load("Geometry.CMSCommonData.cmsIdealGeometryXML_cfi")
 
+process.load("CalibCalorimetry.Configuration.Ecal_FakeConditions_cff")
+
+
+process.load("SimCalorimetry.EcalTrigPrimProducers.ecalTriggerPrimitiveDigis_readDBOffline_cff")
+
+process.source = cms.Source("PoolSource",
+    fileNames = cms.untracked.vstring('file:/data/uberthon/tpg/elec_unsupp_pt10-100.root')
+)
+
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(1)
+    input = cms.untracked.int32(10)
 )
-process.source = cms.Source("EmptySource",
-    numberEventsInRun = cms.untracked.uint32(1),
-    firstRun = cms.untracked.uint32(1)
-)
+
+process.load("CondCore.DBCommon.CondDBCommon_cfi")
+
 
 process.ecalTPConditions = cms.ESSource("PoolDBESSource",
     process.CondDBSetup,
@@ -69,13 +91,44 @@ process.ecalTPConditions = cms.ESSource("PoolDBESSource",
     messagelevel = cms.untracked.uint32(3),
     timetype = cms.string('runnumber'),
 #    connect = cms.string('oracle://ecalh4db/TEST02'),
-    connect = cms.string('sqlite_file:DB.db'),
+    connect = cms.string('sqlite_file:/afs/cern.ch/cms/ECAL/testbeam/pedestal/GlobalRuns/DB_30x.db'),
     authenticationMethod = cms.untracked.uint32(1),
     loadBlobStreamer = cms.untracked.bool(True)
 )
+        
+    
+process.out = cms.OutputModule("PoolOutputModule",
+    outputCommands = cms.untracked.vstring('drop *_*_*_*', 
+        'keep *_simEcalTriggerPrimitiveDigis_*_*', 
+        'keep *_ecalDigis_*_*', 
+        'keep *_ecalRecHit_*_*', 
+        'keep *_ecalWeightUncalibRecHit_*_*', 
+        'keep PCaloHits_*_EcalHitsEB_*', 
+        'keep PCaloHits_*_EcalHitsEE_*', 
+        'keep edmHepMCProduct_*_*_*'),
+    fileName = cms.untracked.string('TrigPrim_Em_DBOffline30x.root')
+)
 
-process.tpDBAnalyzer = cms.EDAnalyzer("EcalTPCondAnalyzer")
+process.Timing = cms.Service("Timing")
 
-process.p = cms.Path(process.tpDBAnalyzer)
+process.SimpleMemoryCheck = cms.Service("SimpleMemoryCheck")
+
+process.MessageLogger = cms.Service("MessageLogger",
+    debugModules = cms.untracked.vstring('simEcalTriggerPrimitiveDigis'),
+    cout = cms.untracked.PSet(
+        threshold = cms.untracked.string('DEBUG'),
+        DEBUG = cms.untracked.PSet(
+            limit = cms.untracked.int32(0)
+        ),
+        EcalTPG = cms.untracked.PSet(
+            limit = cms.untracked.int32(1000000)
+        )
+    ),
+    categories = cms.untracked.vstring('EcalTPG'),
+    destinations = cms.untracked.vstring('cout')
+)
+
+process.p = cms.Path(process.simEcalTriggerPrimitiveDigis)
+process.outpath = cms.EndPath(process.out)
 
 
