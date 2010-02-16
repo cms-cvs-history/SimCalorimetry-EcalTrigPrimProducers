@@ -23,7 +23,7 @@ process.source = cms.Source("NewEventStreamFileReader",
     fileNames = cms.untracked.vstring('file:/afs/cern.ch/user/p/paganini/Data/ecal_local.00038343.0001.A.storageManager.0.0000.dat')
 )
 
-process.tpAnalyzer = cms.EDFilter("EcalTrigPrimAnalyzerMIPs",
+process.tpAnalyzer = cms.EDAnalyzer("EcalTrigPrimAnalyzerMIPs",
     Producer = cms.string('EBTT'),
     EmulProducer = cms.string(''),
     DigiLabel = cms.string('ecalEBunpacker'),
