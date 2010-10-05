@@ -2,9 +2,9 @@ import FWCore.ParameterSet.Config as cms
 
 process = cms.Process("ANALYSEMIP")
 # ECAL Unpacker
-process.load("EventFilter.EcalRawToDigiDev.EcalUnpackerMapping_cfi")
+process.load("EventFilter.EcalRawToDigi.EcalUnpackerMapping_cfi")
 
-process.load("EventFilter.EcalRawToDigiDev.EcalUnpackerData_cfi")
+process.load("EventFilter.EcalRawToDigi.EcalUnpackerData_cfi")
 
 # ECAL TPG Producer
 process.load("SimCalorimetry.EcalTrigPrimProducers.ecalTriggerPrimitiveDigis_CosmicsConfiguration_cff")
