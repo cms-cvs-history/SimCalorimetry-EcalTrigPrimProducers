@@ -72,8 +72,8 @@ EcalTrigPrimProducer::EcalTrigPrimProducer(const edm::ParameterSet&  iConfig):
   if (tcpFormat_) produces <EcalTrigPrimDigiCollection >("formatTCP");
 
   label_= iConfig.getParameter<std::string>("Label");
-  instanceNameEB_ = iConfig.getParameter<std::string>("InstanceEB");;
-  instanceNameEE_ = iConfig.getParameter<std::string>("InstanceEE");;
+  instanceNameEB_ = "simEcalUnsuppressedDigis" + iConfig.getParameter<std::string>("InstanceEB");
+  instanceNameEE_ = "simEcalUnsuppressedDigis" + iConfig.getParameter<std::string>("InstanceEE");
   algo_=NULL;
 }
 
@@ -107,26 +107,33 @@ void EcalTrigPrimProducer::beginJob() {
   
   edm::Service<edm::ConstProductRegistry> reg;
   // Loop over provenance of products in registry.
+  bool done=false;
   for (edm::ProductRegistry::ProductList::const_iterator it =  reg->productList().begin();
        it != reg->productList().end(); ++it) {
     edm::BranchDescription desc = it->second;
-    if (desc.friendlyClassName().find("EBDigiCollection")==0  &&
-	desc.moduleLabel()=="ecalUnsuppressedDigis") {
-      edm::ParameterSet result = getParameterSet(desc.psetID());
-      if (found ) {
-	if ( result.getParameter<int>("binOfMaximum")!=binOfMaximum_)edm:: LogWarning("EcalTPG")<< "binofMaximum given in configuration (="<<binOfMaximum_<<") is different from the one found in ProductRegistration(="<<result.getParameter<int>("binOfMaximum")<<")!!!";
-      }else {
-	binOfMaximum_=result.getParameter<int>("binOfMaximum");
-	edm::LogInfo("EcalTPG") <<"EcalTrigPrimProducer is using binOfMaximum found in ProductRegistry :  "<<binOfMaximum_;
-	break;
+    if (desc.friendlyClassName().find("EBDigiCollection")==0  && desc.moduleLabel()=="mix") {
+      std::vector<edm::ParameterSet> const& vResult = getParameterSet(desc.psetID()).getParameterSetVector("digitizers");
+      for (auto const& result : vResult) {
+        if(result.getParameter<std::string>("accumulatorType") == "ECalDigiProducer") {
+          std::cerr << "BARF: GOOD" << std::endl; 
+          if (found ) {
+            if ( result.getParameter<int>("binOfMaximum")!=binOfMaximum_)edm:: LogWarning("EcalTPG")<< "binofMaximum given in configuration (="<<binOfMaximum_<<") is different from the one found in ProductRegistration(="<<result.getParameter<int>("binOfMaximum")<<")!!!";
+          } else {
+            binOfMaximum_=result.getParameter<int>("binOfMaximum");
+            edm::LogInfo("EcalTPG") <<"EcalTrigPrimProducer is using binOfMaximum found in ProductRegistry :  "<<binOfMaximum_;
+            done = true;
+          }
+        }
+        break;
       }
     }
+    if(done) break;
   }
 
 
   if (binOfMaximum_==0) {
     binOfMaximum_=6;
-    edm::LogWarning("EcalTPG")<<"Could not find product registry of EBDigiCollection (label ecalUnsuppressedDigis), had to set the following parameters by Hand:  binOfMaximum="<<binOfMaximum_;
+    edm::LogWarning("EcalTPG")<<"Could not find product registry of EBDigiCollection (label mix), had to set the following parameters by Hand:  binOfMaximum="<<binOfMaximum_;
   }
 }
 

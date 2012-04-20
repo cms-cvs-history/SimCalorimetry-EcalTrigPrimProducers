@@ -11,7 +11,7 @@ simEcalTriggerPrimitiveDigis = cms.EDProducer("EcalTrigPrimProducer",
     Famos = cms.bool(False),
     TcpOutput = cms.bool(False),
     Debug = cms.bool(False),
-    Label = cms.string('simEcalUnsuppressedDigis')
+    Label = cms.string('mix')
 )
 
 
