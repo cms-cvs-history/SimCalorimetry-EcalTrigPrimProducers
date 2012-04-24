@@ -115,7 +115,6 @@ void EcalTrigPrimProducer::beginJob() {
       std::vector<edm::ParameterSet> const& vResult = getParameterSet(desc.psetID()).getParameterSetVector("digitizers");
       for (auto const& result : vResult) {
         if(result.getParameter<std::string>("accumulatorType") == "ECalDigiProducer") {
-          std::cerr << "BARF: GOOD" << std::endl; 
           if (found ) {
             if ( result.getParameter<int>("binOfMaximum")!=binOfMaximum_)edm:: LogWarning("EcalTPG")<< "binofMaximum given in configuration (="<<binOfMaximum_<<") is different from the one found in ProductRegistration(="<<result.getParameter<int>("binOfMaximum")<<")!!!";
           } else {
