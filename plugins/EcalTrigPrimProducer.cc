@@ -72,8 +72,9 @@ EcalTrigPrimProducer::EcalTrigPrimProducer(const edm::ParameterSet&  iConfig):
   if (tcpFormat_) produces <EcalTrigPrimDigiCollection >("formatTCP");
 
   label_= iConfig.getParameter<std::string>("Label");
-  instanceNameEB_ = "simEcalUnsuppressedDigis" + iConfig.getParameter<std::string>("InstanceEB");
-  instanceNameEE_ = "simEcalUnsuppressedDigis" + iConfig.getParameter<std::string>("InstanceEE");
+  std::string instancePrefix = iConfig.getParameter<std::string>("InstancePrefix");
+  instanceNameEB_ = instancePrefix + iConfig.getParameter<std::string>("InstanceEB");
+  instanceNameEE_ = instancePrefix + iConfig.getParameter<std::string>("InstanceEE");
   algo_=NULL;
 }
 

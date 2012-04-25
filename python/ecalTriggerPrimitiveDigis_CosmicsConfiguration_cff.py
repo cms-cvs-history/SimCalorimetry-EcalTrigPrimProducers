@@ -18,6 +18,7 @@ simEcalTriggerPrimitiveDigis = cms.EDProducer("EcalTrigPrimProducer",
     TcpOutput = cms.bool(False),
     Debug = cms.bool(False),
     Label = cms.string('ecalEBunpacker'),
+    InstancePrefix = cms.string(''),
     TTFLowEnergyEB = cms.double(1.0) ## this + the following is added from 140_pre4 on
 
 )
